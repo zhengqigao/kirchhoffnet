@@ -1,10 +1,10 @@
-# kirchhoffnet
+# Kirchhoffnet: Hardware Acceleration of ODE-Drive Models
 
 ### Introduction
 
 This repo contains the code for our paper titled: [KirchhoffNet: A Scalable Ultra Fast Analog Neural Network](https://arxiv.org/pdf/2310.15872), accepted by the top Electronic Design Automation (EDA) conference, ICCAD'24. In one sentence, we argue an interesting fact that an analog integrated circuit mathematically corresponds to a [Neural ODE](https://arxiv.org/pdf/1806.07366). Thus, if we fabricate such an analog circuit as a specific hardware acclerator for Neural ODE, it can run extremely fast (compared to running Neural ODE on GPUs). This is the first work in this area. In the future, we aim to explore various aspects and pursue real hardware tape-outs.
 
-### Prequiesits
+### Prerequisite
 
 You need to have [`pytorch`](https://pytorch.org/get-started/locally/) and [`torchdiffeq`](https://github.com/rtqichen/torchdiffeq) installed; please use the embedded links for instructions on installations. Next, clone the code to your local machine. To understand how we build the ODE right-hand side, we suggest readers to understand Kirchhoff current law and basic RC circuits.
 
