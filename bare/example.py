@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from bare import device
 from circuit import Circuit
 from torchdiffeq import odeint_adjoint as odeint
 
