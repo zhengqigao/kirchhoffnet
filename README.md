@@ -26,12 +26,19 @@ python main_gen.py --config_path ./configs/config_twomoon.yaml --gpu 0
 
 As users might notice, inside `src/results/twomoon`, we provide the `config.yaml` file, which was used to train the model stored there, this config file is exactly the same as `src/configs/config_twomoon.yaml`. Users can also use the `config.yaml` under other `src/results/xxx` as the commandline argument for the script `main_gen.py` and `main_den.py` to re-run the training procedure.
 
+### Additional Reading
+
+We have been asked a few questions frequently, please refer to this [Q&A](https://zhengqigao.github.io/articles/what_is_kirchhoffnet.pdf) for some common questions and our ansers. Below is a one-page poster summary of our work.
+
+![kirchhoffnet](https://zhengqigao.github.io/articles/kirchhoffnet.pdf)
+
+
 ### Citation
 
 Please cite our paper if you use it in your research:
 
 ```bibtex
-@misc{gao2024kirchhoffnetscalableultrafast,
+@misc{gao2024kirchhoffnet,
       title={KirchhoffNet: A Scalable Ultra Fast Analog Neural Network}, 
       author={Zhengqi Gao and Fan-Keng Sun and Ron Rohrer and Duane S. Boning},
       year={2024},
