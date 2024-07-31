@@ -1,4 +1,4 @@
-# Kirchhoffnet: Hardware Acceleration of ODE-Driven Models
+## Kirchhoffnet: Hardware Acceleration of ODE-Driven Models
 
 ### Introduction
 
