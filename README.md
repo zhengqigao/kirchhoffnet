@@ -29,7 +29,7 @@ python main_gen.py --config_path ./configs/config_twomoon.yaml --gpu 0
 
 As users might notice, inside `src/results/twomoon`, we provide the `config.yaml` file, which was used to train the model stored there. This config file is exactly the same as `src/configs/config_twomoon.yaml`. Users can also use the `config.yaml` under other `src/results/xxx` as the commandline argument for the script `main_gen.py` and `main_den.py` to re-run the training procedure.
 
-Similarly, we also provide trained model checkpoints for image classification task. But first please revise the data path in line 22-28 in `src/utils/testbench.py` for the program to successfully locate the data. Specifically, 
+Similarly, we also provide trained model checkpoints for image classification task. But first please revise the data path in line 22-28 in `src/utils/testbench.py` for the program to successfully locate the data. Afterwards, 
 
 ```shell
 python inference_image_classify.py --exp_name xxx --gpu 0
