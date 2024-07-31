@@ -13,7 +13,7 @@ import os
 import time
 from utils.utils import set_seed
 from utils.topology import generate_topology
-
+import sys
 
 def verbose_print():
     print(f"### Test bench: {config['test_bench']}")
@@ -31,16 +31,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Add arguments
-    parser.add_argument('--exp_name', type=str, default='search_cifar100_2', help='stored under ./results/exp_name/')
+    parser.add_argument('--exp_name', type=str, default='mnist', help='stored under ./results/exp_name/')
     parser.add_argument('--gpu', type=int, nargs='+', default=[-1], help='gpu ids')  # Allow multiple GPUs
     parser.add_argument('--till_iter', type=float, default=float('inf'), help = 'till which iteration, default is inf to finish all the test data')
     parser.add_argument('--batch_size', type = int, default=-1, help='batch size for testing, default is -1 to use the batch size in the config file')
-    parser.add_argument('--on_train', action='store_true', default = False, help='whether to test on the training set')
+
     # Parse the command-line arguments
     args = parser.parse_args()
     device = torch.device(f"cuda:{args.gpu[0]}" if torch.cuda.is_available() and args.gpu[0] >= 0 else 'cpu')
     dp_flag = args.gpu[0] >= 0 and len(args.gpu) > 1
-    exp_dir = os.path.join('./results', args.exp_name)
+    exp_dir = os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), './results', args.exp_name)
     set_seed(42)
 
     if not os.path.exists(exp_dir):
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     metric_value = {key: 0.0 for key in config['test']['metric']} if len(config['test']['metric']) > 0 else {}
     with torch.no_grad():
         running_loss, total_num = 0.0, 0
-        for i, data in enumerate(train_loader if args.on_train else test_loader):  # Loop through batches of data
+        for i, data in enumerate(test_loader):  # Loop through batches of data
             inputs, labels = process_func(data)
             inputs, labels = inputs.to(device), labels.to(device)
 
