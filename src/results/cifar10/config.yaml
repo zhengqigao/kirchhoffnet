@@ -1,0 +1,67 @@
+batch_size: 128
+network:
+  adjoint: true
+  encoder: null
+  fill: zeros
+  initialization: kaiming
+  model:
+    args: {}
+    name: ShiftRelu1
+  net_struct:
+  - args:
+      fully_connect_node: 50
+      height: 32
+      kernel_repeat: 1
+      neighbor_size: 4
+      num_channel: 3
+      repeat:
+      - 1
+      - 0
+      width: 32
+    name: _mix_connect
+  - args:
+      fully_connect_node: 50
+      height: 32
+      kernel_repeat: 1
+      neighbor_size: 4
+      num_channel: 3
+      repeat:
+      - 1
+      - 0
+      width: 32
+    name: _mix_connect
+  - args:
+      fully_connect_node: 50
+      height: 32
+      kernel_repeat: 1
+      neighbor_size: 4
+      num_channel: 3
+      repeat:
+      - 1
+      - 0
+      width: 32
+    name: _mix_connect
+  projector: last10
+  residual: null
+num_worker: 8
+simulation:
+  first_step: 0.01
+  method: dopri5
+  min_step: 1e-5
+  step_size: 1e-6
+  t_end:
+  - 0.0
+  - 0.6
+  - 1.2
+  - 1.8
+  tol: 1e-3
+test:
+  metric:
+  - top1
+  - top5
+test_bench: cifar10
+train:
+  lr: 0.0001
+  num_epoch: 20
+  save_epoch: 1
+  scheduler: none
