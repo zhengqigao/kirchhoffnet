@@ -29,6 +29,13 @@ python main_gen.py --config_path ./configs/config_twomoon.yaml --gpu 0
 
 As users might notice, inside `src/results/twomoon`, we provide the `config.yaml` file, which was used to train the model stored there. This config file is exactly the same as `src/configs/config_twomoon.yaml`. Users can also use the `config.yaml` under other `src/results/xxx` as the commandline argument for the script `main_gen.py` and `main_den.py` to re-run the training procedure.
 
+Similarly, we also provide trained model checkpoints for image classification task. But first please revise the data path in line 22-28 in `src/utils/testbench.py` for the program to successfully locate the data. Specifically, 
+
+```shell
+python inference_image_classify.py --exp_name xxx --gpu 0
+```
+Here `xxx` can be `mnist`, `svhn`, and `cifar10`. The `config.yaml` file under `src/results/xxx` can be used along with `main_image_classify.py` to do training.
+
 ### Remarks
 
 We have been asked a few questions frequently, please refer to this [Q&A](https://zhengqigao.github.io/articles/what_is_kirchhoffnet.pdf) for some common questions and our ansers. Also, here is a one-page summary of [our work](https://zhengqigao.github.io/articles/kirchhoffnet.pdf). There are many future works we want to explore, such as power and area of such an analog integrated circuit. Also, we want to redo this work based on commercial simulators such as Hspice and Spectre. We are also considering fabricating a real hardware. We are always looking for collaborators on this topic.
