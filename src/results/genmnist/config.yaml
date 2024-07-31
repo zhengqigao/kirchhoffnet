@@ -1,0 +1,53 @@
+batch_size: 32
+network:
+  adjoint: true
+  encoder: null
+  fill: zeros
+  initialization: kaiming
+  model:
+    args: {}
+    name: ShiftTanh1
+  net_struct:
+  - args:
+      fully_connect_node: 0
+      height: 28
+      kernel_repeat: 1
+      neighbor_size: 3
+      num_channel: 1
+      repeat:
+      - 1
+      - 1
+      width: 28
+    name: _mix_connect
+  - args:
+      fully_connect_node: 0
+      height: 28
+      kernel_repeat: 1
+      neighbor_size: 3
+      num_channel: 1
+      repeat:
+      - 1
+      - 1
+      width: 28
+    name: _mix_connect
+  projector: last10
+  residual: null
+num_worker: 8
+simulation:
+  first_step: 1e-2
+  method: dopri5
+  min_step: 1e-5
+  step_size: 1e-6
+  t_end:
+  - 0.0
+  - 1.0
+  - 2.0
+  tol: 1e-3
+test_bench: genmnist
+train:
+  lr: 0.0001
+  num_epoch: 50
+  save_epoch: 1
+  scheduler: cosinelr_10_0.00001
+visualization:
+  num_sample: 8

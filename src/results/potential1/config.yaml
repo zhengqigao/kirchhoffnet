@@ -1,0 +1,139 @@
+batch_size: 512
+network:
+  adjoint: true
+  initialization: kaiming
+  model:
+    args: {}
+    name: ShiftTanh1
+  net_struct:
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 10
+      - 10
+    name: _fully_connect
+num_worker: 8
+simulation:
+  first_step: 1e-2
+  method: dopri5
+  min_step: 1e-6
+  step_size: 1.0e-06
+  t_end:
+  - 0.0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - 1.0
+  - 1.1
+  - 1.2
+  - 1.3
+  - 1.4
+  - 1.5
+  - 1.6
+  tol: 1e-3
+test:
+  metric: []
+test_bench: potential1
+train:
+  lr: 0.0001
+  num_epoch: 20000
+  save_epoch: 1
+  scheduler: cosinelr_50_0.00001
+visualization:
+  num_sample: 100000

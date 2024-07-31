@@ -1,0 +1,55 @@
+batch_size: 512
+network:
+  adjoint: true
+  initialization: kaiming
+  model:
+    args: {}
+    name: ShiftTanh2
+  net_struct:
+  - args:
+      num_node: 3
+      repeat:
+      - 25
+      - 25
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 25
+      - 25
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 25
+      - 25
+    name: _fully_connect
+  - args:
+      num_node: 3
+      repeat:
+      - 25
+      - 25
+    name: _fully_connect
+num_worker: 8
+simulation:
+  first_step: 1e-3
+  method: dopri5
+  min_step: 1e-6
+  step_size: 1.0e-06
+  t_end:
+  - 0.0
+  - 0.5
+  - 1.0
+  - 1.5
+  - 2.0
+  tol: 1e-4
+test:
+  metric: []
+test_bench: circle
+train:
+  lr: 0.0001
+  num_epoch: 20000
+  save_epoch: 1
+  scheduler: cosinelr_50_0.00001
+visualization:
+  num_sample: 100000
