@@ -4,8 +4,7 @@ import torch.nn.functional as F
 from circuit import Circuit
 from torchdiffeq import odeint_adjoint as odeint
 
-
-device_cfg = {'use_diff': False, 'activation': 'leakyrelu'}
+device_cfg = {'use_diff': False, 'activation': 'relu'}
 
 # 12 devices connecting from node (first row) to node (second row), e.g., first device from node 0 to node 4
 # index = 0 (node 0) is reserved for ground node
@@ -19,8 +18,8 @@ batch_size, input_dim, num_t = 10, 6, 100
 
 x = torch.randn(batch_size, input_dim)
 
-# Evaluate the right-hand side of the ODE dx/dt = circuit(t,x) at a single time point t=1.0
-output1 = circuit(1.0, x)
+# Evaluate the right-hand side of the ODE dx/dt = circuit(t,x) at a single time point t=0.5
+output1 = circuit(0.5, x)
 
 # solve the ODE dx/dt = circuit(t,x) at 100 uniform time points in [0.0,1.0] with x as initial values at t=0
 output2 = odeint(circuit, x, t=torch.linspace(0, 1, num_t))
