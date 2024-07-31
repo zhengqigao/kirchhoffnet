@@ -1,0 +1,6 @@
+
+This is a barebone implementation of the key idea of KirchhoffNet. Please have `pytorch` and `torchdiffeq` installed. Change directory to the current folder 'bare' and run the command `python example.py`. Tracing through how the code executes will enable users to understand how an analog integrated circuit can actually be used as a Neural ODE. 
+
+`device.py` implements the nonlinear I-V relationships of a device in analog integrated circuits, which corresponds to the function g in our paper. Note that this is an ideal case, as we abstract the I-V relation in Pytorch. In practical case, we would need to simulate the device I-V relationship in commercial circuit simulators such as SPICE or Spectre.
+
+The forward function in `circuit.py` is the key. It shows given a topology (represented as a 2-by-N matrix) about how devices are connected among nodes, how we build the ODE right hand side based on Kirchhoff current law (KCL). Note that in our paper, we specify that a fixed and unlearnable capacitor is connected to every node, while this has been omitted/simplified in the code (equivalent to value = 1). Concretely, the forward function in `circuit.py` implements the right hand side of the ODE in Eq. (7) of our paper.
