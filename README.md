@@ -1,4 +1,4 @@
-## Kirchhoffnet: Hardware Acceleration of ODE-Driven Models
+## KirchhoffNet: A Scalable Ultra Fast Analog Neural Network
 
 ### Introduction
 
