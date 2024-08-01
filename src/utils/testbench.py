@@ -19,13 +19,12 @@ from math import ceil, pi
 from torch_geometric.datasets import KarateClub, Planetoid
 
 # Some predefined paths
-MNIST_data_path = '/checkpoint/sherryxue/data/'
-CIFAR_data_path = '/datasets01/cifar100/022818/data/'
-HOUSE_data_path = '/checkpoint/sherryxue/data/'
-TINYIMAGE_data_path = '/datasets01/tinyimagenet/081318/'
-SVHN_data_path = '/checkpoint/sherryxue/data/'
-CIFAR10_data_path = '/checkpoint/sherryxue/data/'
-Graph_data_path = '/checkpoint/sherryxue/data/'
+MNIST_data_path = '/xxxx/data/'
+CIFAR_data_path = '/xxxx/data/'
+HOUSE_data_path = '/xxxx/data/'
+TINYIMAGE_data_path = '/xxxx/data/'
+SVHN_data_path = '/xxxx/data/'
+CIFAR10_data_path = '/xxxx/data/'
 
 def gen_toy_dataset(n_samples, n_features, test_size=0.25):
     # Generate synthetic data for regression
