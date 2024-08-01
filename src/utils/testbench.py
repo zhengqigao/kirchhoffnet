@@ -1,4 +1,3 @@
-import scipy
 import torch
 from torch.utils.data import DataLoader, random_split, Dataset, TensorDataset
 import torchvision.transforms as transforms
@@ -9,14 +8,10 @@ import torch.nn as nn
 import torchvision
 from sklearn.datasets import make_moons, make_circles, make_swiss_roll
 import sklearn
-import pandas as pd
-from ucimlrepo import fetch_ucirepo
 from torchvision.datasets import ImageFolder
 import os
 import numpy as np
-from math import ceil, pi
 
-from torch_geometric.datasets import KarateClub, Planetoid
 
 # Some predefined paths
 MNIST_data_path = '/xxxx/data/'

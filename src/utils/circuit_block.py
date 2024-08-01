@@ -7,9 +7,7 @@ import numpy as np
 import torch.nn.init as init
 from .baseline import trace_jac, FeedForwardNet
 import warnings
-import matplotlib.pyplot as plt
 from math import ceil
-import time
 import sys
 
 
